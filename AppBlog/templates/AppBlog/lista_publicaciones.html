@@ -1,0 +1,34 @@
+{% extends "AppBlog/base.html" %}
+
+{% block contenido %}
+    <h2 class="text-center mb-4">Publicaciones</h2>
+    {% if publicacion %}
+        <div class="row">
+        {% for p in publicacion %}
+            <div class="col-md-12 mb-4">
+                <div class="card margen-iz-der">
+                    <div class="row no-gutters">
+                        {% if p.imagen %}
+                            <div class="col-md-4 mx-auto">
+                                <img class="card-img" src="{{ p.imagen.url }}" alt="{{ p.titulo }}" style="width: 100%;">
+                            </div>
+                        {% endif %}
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ p.titulo }}</h5>
+                                <p class="card-text">{{ p.contenido|truncatewords:15 }}{% if p.contenido|wordcount > 15 %}...{% endif %}</p>
+                                <a href="{% url 'detalle_publicacion' p.pk %}" class="btn btn-primary">Leer más</a>
+                            </div>
+                            <div class="card-footer text-muted">
+                                Publicado por {{ p.autor }} el {{ p.fecha_publicacion|date:"d/m/Y" }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+{% endblock contenido %}

@@ -1,0 +1,11 @@
+{% extends 'AppBlog/base.html' %}
+
+
+{% block contenido %}
+    <h2 class="text-center mb-4">Editar publicación</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    </form>
+{% endblock %}

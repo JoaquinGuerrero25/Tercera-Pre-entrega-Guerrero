@@ -1,0 +1,15 @@
+{% extends "AppBlog/base.html" %}
+{% load widget_tweaks %}
+
+{% block contenido %}
+    <div class="container my-5">
+        <div class="card p-4" style="width: 800px; border: 1px solid #ccc; box-shadow: 10px 10px 10px black;">
+            <h1 class="mb-4">Crear Publicación</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </form>
+        </div>
+    </div>
+{% endblock contenido %}

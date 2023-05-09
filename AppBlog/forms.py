@@ -19,16 +19,19 @@ class Formulario_Publicacion(forms.ModelForm):
     class Meta:
         model = Publicaciones
         fields = ['titulo', 'contenido', 'imagen'] 
-        
-        
+
 class Formulario_Editar(forms.ModelForm):
     class Meta:
         model = Editar
         fields = ('contenido',)
         labels = {'contenido': 'Contenido'}
-        
-class ComentarioForm(forms.ModelForm):
+
+class Formulario_Comentarios(forms.ModelForm):
     class Meta:
         model = Comentario
         fields = ('contenido',)
         labels = {'contenido': 'Contenido del comentario'}
+
+
+class Formulario_busqueda(forms.Form):
+    autor = forms.CharField(required=True, label='Nombre del autor', max_length=100)

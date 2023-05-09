@@ -1,0 +1,42 @@
+{% extends "AppBlog/base.html" %}
+
+{% block contenido %}
+    <div class="card mi-publicacion">
+        <div class="card-header">
+            <h2 class="card-title">{{ publicacion.titulo }}</h2>
+            <p class="card-subtitle text-muted">Publicado por {{ publicacion.autor }} el {{ publicacion.fecha_publicacion|date:"d/m/Y" }}</p>
+        </div>
+        {% if publicacion.imagen %}
+            <img class="card-img-top imagen-publicacion" src="{{ publicacion.imagen.url }}" alt="{{ publicacion.titulo }}">
+        {% endif %}
+        <div class="card-body">
+            <p class="card-text">{{ publicacion.contenido }}</p>
+        </div>
+        {% if es_creador %}
+            <div class="card-footer">
+                <a href="{% url 'editar_publicacion' publicacion.pk %}" class="btn btn-primary">Editar</a>
+                <form action="{% url 'eliminar_publicacion' publicacion.pk %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+    {% for comentario in comentarios %}
+        <div class="card mi-comentario">
+            <div class="card-header">
+                <p class="card-subtitle text-muted">Comentado por {{ comentario.autor }} el {{ comentario.fecha_comentario|date:"d/m/Y" }}</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ comentario.contenido }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+        <form class="agregar-comentario" method="post" action="{% url 'agregar_comentario' publicacion_id=publicacion.id %}">
+            {% csrf_token %}
+            {{ formulario.as_p }}
+            <button type="submit">Agregar comentario</button>
+        </form>
+    {% endif %}
+{% endblock %}

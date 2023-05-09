@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Sigmar&display=swap');
+/* font-family: 'Merriweather', serif; */
+/* font-family: 'Sigmar', cursive; */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #AFD3E2;
+    height: 95px;
+    box-shadow: 6px 6px 6px #00000077;
+}
+
+.titulo-nav a{
+    text-decoration: none;
+    color: rgb(3, 65, 83);
+    font-size: 50px;
+    font-family: 'Sigmar', cursive;
+    text-shadow: 2px 2px 2px #000000af;
+}
+
+nav li a {
+    background-color: #19A7CE;
+    margin: 10px;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow:2px 2px 2px #000000af;
+}
+
+
+nav .barra-busqueda {
+    box-shadow: 2px 2px 2px #00000073;
+}
+
+nav .boton-busqueda {
+    box-shadow: 2px 2px 2px #00000075;
+}
+
+/* pagina de iniciar sesion  */
+.titulo-iniciar {
+    font-family: 'Merriweather', serif;
+}
+
+.mi-formulario {
+    width: 700px;
+    margin: 170px auto;
+    border: 1px solid #00000081;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #00000075;
+}
+
+.mi-formulario h2 {
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #00000081;
+}
+
+.botones-container {
+    display: flex;
+    align-items: center;
+}
+
+.botones-container button {
+    height: 40px;
+    width: 90px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-decoration-break: none;
+    box-shadow: 5px 5px 5px #00000075;
+}
+
+.botones-container a{
+    height: 40px;
+    width: 90px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+/* Pagina de crear usuario */
+
+.formulario-usuario1{
+    margin: 100px auto;
+    width: 500px;
+    border: solid 1px #0000005b;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px #00000075;
+}
+
+.formulario-usuario1 h2 {
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #00000081;
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.formulario-usuario1 button {
+    background-color: #19A7CE;
+    height: 40px;
+    width: 160px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #00000075;
+}
+
+.margen-iz-der {
+    margin-left: 250px;
+    margin-right: 250px;
+    box-shadow: 5px 5px 5px #00000056;
+}
+
+.card-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* pagina detalle_publicacion */
+
+.mi-publicacion{
+    width: 1300px;
+    margin: 100px auto;
+}
+
+.imagen-publicacion{
+    width: 1300px;
+    height: 700px;
+    object-fit: cover;
+}
+
+.mi-comentario{
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.agregar-comentario button {
+    background-color: #19A7CE;
+    height: 40px;
+    width: 160px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #00000075;
+    margin-left: 300px;
+}
+
+.card {
+    margin-top: 50px;
+}

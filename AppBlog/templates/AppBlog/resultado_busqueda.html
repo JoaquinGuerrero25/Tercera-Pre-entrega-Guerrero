@@ -1,0 +1,32 @@
+{% extends "AppBlog/base.html" %}
+
+{% block contenido %}
+    <h1>Resultados de búsqueda</h1>
+    <hr>
+    {% if publicaciones %}
+        {% for publicacion in publicaciones %}
+            <div class="col-md-12 mb-4">
+                <div class="card margen-iz-der">
+                    <div class="row no-gutters">
+                        {% if publicacion.imagen %}
+                            <div class="col-md-4 mx-auto">
+                                <img class="card-img" src="{{ publicacion.imagen.url }}" alt="{{ publicacion.titulo }}">
+                            </div>
+                        {% endif %}
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2 class="card-title"><a href="{% url 'detalle_publicacion' publicacion.pk %}">{{ publicacion.titulo }}</a></h2>
+                                <p class="card-text">{{ publicacion.contenido }}</p>
+                            </div>
+                            <div class="card-footer text-muted">
+                                Publicado por {{ publicacion.autor }} el {{ publicacion.fecha_publicacion|date:"d/m/Y" }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        {% endfor %}
+    {% else %}
+        <p>No se encontraron publicaciones con esa búsqueda.</p>
+    {% endif %}
+{% endblock contenido %}

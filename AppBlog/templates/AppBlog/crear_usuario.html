@@ -1,0 +1,51 @@
+{% extends "AppBlog/base.html" %}
+
+{% block contenido %}
+    <form method="POST" class="formulario-usuario1">
+        <h2>Crear Usuario</h2>
+        {% csrf_token %}
+        <div class="campo">
+            <label for="{{ form.username.id_for_label }}">Nombre de Usuario:</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <span class="error">{{ form.username.errors|join:", " }}</span>
+            {% endif %}
+        </div>
+        <div class="campo">
+            <label for="{{ form.email.id_for_label }}">Correo Electrónico:</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <span class="error">{{ form.email.errors|join:", " }}</span>
+            {% endif %}
+        </div>
+        <div class="campo">
+            <label for="{{ form.first_name.id_for_label }}">Nombre:</label>
+            {{ form.first_name }}
+            {% if form.first_name.errors %}
+                <span class="error">{{ form.first_name.errors|join:", " }}</span>
+            {% endif %}
+        </div>
+        <div class="campo">
+            <label for="{{ form.last_name.id_for_label }}">Apellido:</label>
+            {{ form.last_name }}
+            {% if form.last_name.errors %}
+                <span class="error">{{ form.last_name.errors|join:", " }}</span>
+            {% endif %}
+        </div>
+        <div class="campo">
+            <label for="{{ form.password1.id_for_label }}">Contraseña:</label>
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+                <span class="error">{{ form.password1.errors|join:", " }}</span>
+            {% endif %}
+        </div>
+        <div class="campo">
+            <label for="{{ form.password2.id_for_label }}">Confirmar Contraseña:</label>
+            {{ form.password2 }}
+            {% if form.password2.errors %}
+                <span class="error">{{ form.password2.errors|join:", " }}</span>
+            {% endif %}
+        </div>
+        <button type="submit" class="boton-crear-usuario">Crear Usuario</button>
+    </form>
+{% endblock contenido %}
