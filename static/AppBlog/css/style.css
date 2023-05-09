@@ -163,3 +163,38 @@ nav .boton-busqueda {
 .card {
     margin-top: 50px;
 }
+
+/* Footer */
+.push {
+    height: 100px;
+}
+footer {
+    background-color: #afe7f5b4;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    margin-top: 300px;
+    width: 100%;
+}
+
+.footer-iconos a i {
+    font-size: 26px;
+    transition: 0.3s;
+    color: #000;
+    transform: center;
+    transition: transform 0.03s ease-in-out;
+    margin-top: 13px;
+    padding: 10px;
+}
+
+.footer-iconos a:hover i {
+    transform: scale(1.5);   
+}
+
+.txt-footer {
+    font-family: 'Merriweather', serif;
+    color: #000;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px;
+}

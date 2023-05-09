@@ -2,6 +2,8 @@
 
 {% block contenido %}
 {% if mensaje %}
-<p>{{ mensaje }}</p>
+<div class="alert alert-danger" role="alert" style="width: 800px; margin: 200px auto;">
+    {{ mensaje }}
+</div>
 {% endif %}
 {% endblock contenido %}
